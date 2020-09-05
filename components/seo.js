@@ -4,7 +4,7 @@ export default function SEO() {
 	return (
 		<Head>
 			<title>SearchPI</title>
-			<link rel="icon" href="/favicon.ico" />
+			<link rel="icon" href="/favicon.png" />
 		</Head>
 	);
 }

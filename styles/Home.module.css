@@ -4,4 +4,31 @@
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
+	transition: background 0.5s ease;
+}
+
+.input {
+	border: none;
+	width: 100vw;
+	font-size: 6em;
+	font-family: "Montserrat", sans-serif;
+	text-align: center;
+	mix-blend-mode: difference;
+	font-weight: 900;
+	padding: 0.1em 0;
+}
+
+.input:focus {
+	outline: none;
+}
+
+.output p {
+	color: white;
+	width: 100vw;
+	font-size: 5em;
+	text-align: center;
+	margin-top: 0.5em;
+	margin-bottom: 0;
+	mix-blend-mode: difference;
+	font-weight: 900;
 }
