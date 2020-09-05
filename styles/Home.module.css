@@ -9,26 +9,39 @@
 
 .input {
 	border: none;
-	width: 100vw;
+	width: 100%;
 	font-size: 6em;
-	font-family: "Montserrat", sans-serif;
+	font-family: inherit;
 	text-align: center;
 	mix-blend-mode: difference;
 	font-weight: 900;
 	padding: 0.1em 0;
+	-webkit-appearance: none;
 }
 
 .input:focus {
 	outline: none;
 }
 
-.output p {
+.output {
 	color: white;
-	width: 100vw;
+	width: 100%;
 	font-size: 5em;
 	text-align: center;
 	margin-top: 0.5em;
 	margin-bottom: 0;
-	mix-blend-mode: difference;
 	font-weight: 900;
+	word-wrap: break-word;
+}
+
+.output span {
+	mix-blend-mode: difference;
+}
+
+.output .search {
+	mix-blend-mode: normal;
+}
+
+.search {
+	color: lightgreen;
 }

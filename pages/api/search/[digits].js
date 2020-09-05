@@ -1,3 +1,5 @@
+// Thanks Shiff!
+
 const pi = require("../../../pi.json").pi;
 
 export default (req, res) => {
@@ -27,9 +29,29 @@ export default (req, res) => {
 		return -1;
 	}
 
+	function getBefore(index, amount) {
+		let numbers = [];
+		for (let i = 1; i <= amount; i++) {
+			let n = pi.charAt(index - i);
+			numbers.unshift(n);
+		}
+		return numbers.join("");
+	}
+
+	function getAfter(index, amount) {
+		let numbers = [];
+		for (let i = 1; i <= amount; i++) {
+			let n = pi.charAt(index + digits.length - 1 + i);
+			numbers.push(n);
+		}
+		return numbers.join("");
+	}
+
 	const index = indexOf(pi, digits);
 	res.json({
 		index: index - 1,
 		search: digits,
+		before: `...${getBefore(index, 5)}`,
+		after: `${getAfter(index, 5)}...`,
 	});
 };
