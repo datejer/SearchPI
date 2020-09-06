@@ -1,9 +1,9 @@
 import { useState, useRef, useEffect } from "react";
 import "isomorphic-fetch";
 import ordinal from "ordinal";
+import _ from "lodash";
 import styles from "../styles/Home.module.css";
 import SEO from "../components/seo";
-import debounce from "../helpers/debounce";
 import approximateColor1ToColor2ByPercent from "../helpers/color";
 
 export default function Home() {
@@ -23,16 +23,9 @@ export default function Home() {
 		}
 	}, []);
 
-	const handleChange = (event) => {
-		if (!event.target.value || isNaN(event.target.value)) {
-			setBefore("");
-			setAfter("");
-			setIndex(-1);
-			setSearch("");
-			return;
-		}
-		debounce(
-			fetch(`/api/search/${event.target.value}`).then((res) =>
+	const delayedQuery = useRef(
+		_.debounce((q) => {
+			fetch(`/api/search/${q}`).then((res) =>
 				res.json().then((data) => {
 					let color = 256 - (data.index / 1000000) * 256;
 					setIndex(data.index);
@@ -48,9 +41,19 @@ export default function Home() {
 					);
 					setBackground(`rgb(${color},${color},${color})`);
 				})
-			),
-			10000
-		);
+			);
+		}, 500)
+	).current;
+
+	const handleChange = (event) => {
+		if (!event.target.value || isNaN(event.target.value)) {
+			setBefore("");
+			setAfter("");
+			setIndex(-1);
+			setSearch("");
+			return;
+		}
+		delayedQuery(event.target.value);
 	};
 
 	return (
