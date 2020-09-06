@@ -43,5 +43,23 @@
 }
 
 .search {
-	color: lightgreen;
+	transition: color 0.5s ease;
+}
+
+.index {
+	color: white;
+	width: 100%;
+	font-size: 2em;
+	text-align: center;
+	margin-top: 0.75em;
+	margin-bottom: 0;
+	word-wrap: break-word;
+}
+
+.index span {
+	mix-blend-mode: difference;
+}
+
+.index .search {
+	mix-blend-mode: normal;
 }

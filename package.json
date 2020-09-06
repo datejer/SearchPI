@@ -10,6 +10,7 @@
   "dependencies": {
     "isomorphic-fetch": "^2.2.1",
     "next": "9.5.3",
+    "ordinal": "^1.0.3",
     "react": "16.13.1",
     "react-dom": "16.13.1"
   }

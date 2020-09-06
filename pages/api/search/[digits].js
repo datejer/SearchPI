@@ -49,7 +49,7 @@ export default (req, res) => {
 
 	const index = indexOf(pi, digits);
 	res.json({
-		index: index - 1,
+		index: index,
 		search: digits,
 		before: `...${getBefore(index, 5)}`,
 		after: `${getAfter(index, 5)}...`,
