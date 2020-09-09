@@ -1,4 +1,4 @@
-# [SearchPI](pi.ejer.gq)
+# [SearchPI](https://pi.ejer.gq)
 
 > Search for number combinations in the first 1 million digits of π!
 
