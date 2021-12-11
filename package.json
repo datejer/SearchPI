@@ -10,9 +10,9 @@
   "dependencies": {
     "isomorphic-fetch": "^2.2.1",
     "lodash": "^4.17.21",
-    "next": "9.5.4",
+    "next": "^12.0.7",
     "ordinal": "^1.0.3",
-    "react": "16.13.1",
-    "react-dom": "16.13.1"
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
   }
 }
