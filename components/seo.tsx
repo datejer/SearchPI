@@ -4,7 +4,16 @@ export default function SEO() {
   return (
     <Head>
       <title>SearchPI</title>
-      <link rel="icon" href="/favicon.png" />
+      <link
+        rel="icon"
+        href="/favicon-light.png"
+        media="(prefers-color-scheme:dark)"
+      />
+      <link
+        rel="icon"
+        href="/favicon-dark.png"
+        media="(prefers-color-scheme:light)"
+      />
 
       <meta name="title" content="SearchPI" />
       <meta
